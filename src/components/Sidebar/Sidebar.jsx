@@ -1,13 +1,13 @@
 import React from "react";
 import { AccountToggle } from "./AccountToggle";
-import { Search } from "./Search";
+import RouteSelect from "./RouteSelect";
 
 const Sidebar = () => {
   return (
-    <div className="overflow-y-scroll top-4 sticky h-[calc(100vh - 32px - 48px)]">
+    <div className="sticky h-[calc(100vh - 32px - 48px)]">
       <div>
         <AccountToggle />
-        <Search />
+        <RouteSelect />
       </div>
       {/* Plan Toggle */}
     </div>

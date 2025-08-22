@@ -12,7 +12,7 @@ export const AccountToggle = () => {
           alt="Profile"
         />
         <div className="text-start">
-          <span className="text-sm font-bold block">Lokendra Nath</span>
+          <span className="text-sm font-bold block tracking-widest">Lokendra Nath</span>
           <span className="text-sm font-normal block">
             lokendra25@gmail.com
           </span>
