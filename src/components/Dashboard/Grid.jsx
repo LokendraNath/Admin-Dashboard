@@ -2,7 +2,6 @@ import React from "react";
 import { Stats } from "./Stats";
 import { ActivityGraph } from "./ActivityGraph";
 import { UsageRadar } from "./UsageRadar";
-import { RecentTransaction } from "./RecentTransaction";
 
 const Grid = () => {
   return (
@@ -16,9 +15,6 @@ const Grid = () => {
       <div className="col-span-4">
         <UsageRadar />
       </div>
-      {/* <div className="col-span-12">
-        <RecentTransaction />
-      </div> */}
     </div>
   );
 };
