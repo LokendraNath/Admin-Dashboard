@@ -1,12 +1,46 @@
-# React + Vite
+# 📊 Finance Admin Dashboard  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a **Finance Admin Page** built using **React + TailwindCSS + React Router + Recharts**.  
+The purpose of this project is to **improve my frontend development skills** and practice building real-world admin dashboards.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📷 Preview
+![Dashboard Screenshot](./src/assets/preview.png) 
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Tech Stack
+- ⚛️ **React** – UI Library  
+- 🎨 **TailwindCSS** – Styling framework  
+- 🛣️ **React Router v7** – Client-side routing  
+- 📈 **Recharts** – Data visualization & graphs  
+
+---
+
+## ✨ Features
+- 📌 Sidebar navigation with active route highlighting  
+- 📊 Finance graphs (Revenue, Expenses, Sales trends, etc.)  
+- 📅 Date-based filters (e.g., Past 6 Months, Trailing Year)  
+- 📱 Responsive design for desktop & mobile  
+- ⚡ Clean and modern UI with Tailwind  
+
+---
+
+## 🎯 Learning Goals
+This project helps me practice and strengthen:
+- React Router navigation & layouts  
+- State management with React Hooks  
+- Data visualization with Recharts  
+- Building responsive dashboards using Tailwind  
+
+---
+
+## 📦 Installation & Setup
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/LokendraNath/Admin-Dashboard.git
+cd Admin-Dashboard
+npm install
+npm run dev
