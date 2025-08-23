@@ -4,7 +4,7 @@ import RouteSelect from "./RouteSelect";
 
 const Sidebar = () => {
   return (
-    <div className="sticky h-[calc(100vh - 32px - 48px)]">
+    <div className="">
       <div>
         <AccountToggle />
         <RouteSelect />
