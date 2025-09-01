@@ -21,7 +21,15 @@ const RouteSelect = () => {
   );
 };
 
-const Route = ({ icon, iconName, to }) => {
+const Route = ({
+  icon,
+  iconName,
+  to,
+}: {
+  icon: string;
+  iconName: string;
+  to: string;
+}) => {
   return (
     <NavLink
       to={to}

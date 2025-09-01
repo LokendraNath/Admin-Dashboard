@@ -9,7 +9,6 @@ const Sidebar = () => {
         <AccountToggle />
         <RouteSelect />
       </div>
-      {/* Plan Toggle */}
     </div>
   );
 };

@@ -107,7 +107,19 @@ const TableHead = () => {
   );
 };
 
-const TableRow = ({ cusId, sku, date, price, order }) => {
+const TableRow = ({
+  cusId,
+  sku,
+  date,
+  price,
+  order,
+}: {
+  cusId: string;
+  sku: string;
+  date: string;
+  price: string;
+  order: number;
+}) => {
   return (
     <tr
       className={`text-sm hover:bg-stone-50 transition-colors ${

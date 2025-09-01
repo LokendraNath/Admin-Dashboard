@@ -1,7 +1,6 @@
 import React from "react";
-import profileImage from "../../assets/pfp-lokendra2.png";
 import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid";
-
+import profileImage from "../../assets/pfp-lokendra2.png";
 export const AccountToggle = () => {
   return (
     <div className="mt-4 border-b border-stone-300 pb-2 mb-4">
