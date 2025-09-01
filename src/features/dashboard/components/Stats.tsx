@@ -32,7 +32,15 @@ export const Stats = () => {
   );
 };
 
-const Cards = ({ title, value, pillText, treand, period }) => {
+type CardProps = {
+  title: string;
+  value: string;
+  pillText: string;
+  treand: "up" | "down";
+  period: string;
+};
+
+const Cards = ({ title, value, pillText, treand, period }: CardProps) => {
   return (
     <div className="p-4 col-span-4 rounded-lg border border-stone-300">
       <div className="flex items-start justify-between mb-3">

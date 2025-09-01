@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  UserIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-  MapPinIcon,
-} from "@heroicons/react/16/solid";
+import { UserIcon, EnvelopeIcon, PhoneIcon, MapPinIcon } from "@heroicons/react/16/solid";
 
 const Profile = () => {
   return (
@@ -18,12 +13,9 @@ const Profile = () => {
 
       <div className="p-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Profile Info */}
           <div className="space-y-6">
             <div className="bg-stone-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-stone-800 mb-4">
-                Personal Information
-              </h3>
+              <h3 className="text-lg font-semibold text-stone-800 mb-4">Personal Information</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <UserIcon className="w-5 text-stone-500" />
@@ -43,9 +35,7 @@ const Profile = () => {
                   <PhoneIcon className="w-5 text-stone-500" />
                   <div>
                     <p className="text-sm text-stone-500">Phone</p>
-                    <p className="font-medium text-stone-800">
-                      +91 98765 43210
-                    </p>
+                    <p className="font-medium text-stone-800">+91 98765 43210</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -59,12 +49,9 @@ const Profile = () => {
             </div>
           </div>
 
-          {/* Account Stats */}
           <div className="space-y-6">
             <div className="bg-stone-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-stone-800 mb-4">
-                Account Statistics
-              </h3>
+              <h3 className="text-lg font-semibold text-stone-800 mb-4">Account Statistics</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white rounded-lg p-4 text-center">
                   <p className="text-2xl font-bold text-blue-600">156</p>
@@ -85,21 +72,12 @@ const Profile = () => {
               </div>
             </div>
 
-            {/* Quick Actions */}
             <div className="bg-stone-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-stone-800 mb-4">
-                Quick Actions
-              </h3>
+              <h3 className="text-lg font-semibold text-stone-800 mb-4">Quick Actions</h3>
               <div className="space-y-3">
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-colors">
-                  Edit Profile
-                </button>
-                <button className="w-full bg-stone-200 hover:bg-stone-300 text-stone-800 py-2 px-4 rounded-lg font-medium transition-colors">
-                  Change Password
-                </button>
-                <button className="w-full bg-stone-200 hover:bg-stone-300 text-stone-800 py-2 px-4 rounded-lg font-medium transition-colors">
-                  Notification Settings
-                </button>
+                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-colors">Edit Profile</button>
+                <button className="w-full bg-stone-200 hover:bg-stone-300 text-stone-800 py-2 px-4 rounded-lg font-medium transition-colors">Change Password</button>
+                <button className="w-full bg-stone-200 hover:bg-stone-300 text-stone-800 py-2 px-4 rounded-lg font-medium transition-colors">Notification Settings</button>
               </div>
             </div>
           </div>
@@ -110,3 +88,5 @@ const Profile = () => {
 };
 
 export default Profile;
+
+

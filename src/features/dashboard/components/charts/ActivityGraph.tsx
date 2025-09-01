@@ -11,41 +11,13 @@ import {
 } from "recharts";
 
 const data = [
-  {
-    name: "Jan",
-    profit: 432,
-    loss: 156,
-  },
-  {
-    name: "Feb",
-    profit: 567,
-    loss: 234,
-  },
-  {
-    name: "Mar",
-    profit: 398,
-    loss: 187,
-  },
-  {
-    name: "Apr",
-    profit: 654,
-    loss: 298,
-  },
-  {
-    name: "May",
-    profit: 789,
-    loss: 345,
-  },
-  {
-    name: "Jun",
-    profit: 456,
-    loss: 267,
-  },
-  {
-    name: "Jul",
-    profit: 678,
-    loss: 412,
-  },
+  { name: "Jan", profit: 432, loss: 156 },
+  { name: "Feb", profit: 567, loss: 234 },
+  { name: "Mar", profit: 398, loss: 187 },
+  { name: "Apr", profit: 654, loss: 298 },
+  { name: "May", profit: 789, loss: 345 },
+  { name: "Jun", profit: 456, loss: 267 },
+  { name: "Jul", profit: 678, loss: 412 },
 ];
 
 export const ActivityGraph = () => {
@@ -63,12 +35,7 @@ export const ActivityGraph = () => {
             width={500}
             height={400}
             data={data}
-            margin={{
-              top: 0,
-              right: 0,
-              left: -24,
-              bottom: 0,
-            }}
+            margin={{ top: 0, right: 0, left: -24, bottom: 0 }}
           >
             <CartesianGrid stroke="#e4e4e7" />
             <XAxis

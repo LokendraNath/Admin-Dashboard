@@ -14,41 +14,11 @@ import {
 } from "recharts";
 
 const data = [
-  {
-    feature: "Gold ETF",
-    confirm: 120,
-    pending: 45,
-    cancel: 30,
-    max: 150,
-  },
-  {
-    feature: "Mutual Funds",
-    confirm: 95,
-    pending: 25,
-    cancel: 15,
-    max: 150,
-  },
-  {
-    feature: "Insurance",
-    confirm: 140,
-    pending: 35,
-    cancel: 20,
-    max: 150,
-  },
-  {
-    feature: "FD",
-    confirm: 85,
-    pending: 40,
-    cancel: 25,
-    max: 150,
-  },
-  {
-    feature: "Stock",
-    confirm: 110,
-    pending: 30,
-    cancel: 18,
-    max: 150,
-  },
+  { feature: "Gold ETF", confirm: 120, pending: 45, cancel: 30, max: 150 },
+  { feature: "Mutual Funds", confirm: 95, pending: 25, cancel: 15, max: 150 },
+  { feature: "Insurance", confirm: 140, pending: 35, cancel: 20, max: 150 },
+  { feature: "FD", confirm: 85, pending: 40, cancel: 25, max: 150 },
+  { feature: "Stock", confirm: 110, pending: 30, cancel: 18, max: 150 },
 ];
 
 export const UsageRadar = () => {

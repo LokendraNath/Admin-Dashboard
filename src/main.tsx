@@ -1,16 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import Layout from "./components/Layout/Layout.js";
-import Dashboard from "./components/Dashboard/Dashboard.js";
+import Layout from "@components/Layout/Layout";
+import Dashboard from "@features/dashboard/Dashboard";
 
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import Profile from "./pages/Profile.js";
-import { Transection } from "./pages/Transection.js";
+import Profile from "@features/profile/Profile";
+import { Transactions } from "@features/transactions/Transactions";
 
 const routes = createBrowserRouter([
   {
@@ -21,10 +21,7 @@ const routes = createBrowserRouter([
         index: true,
         element: <Dashboard />,
       },
-      {
-        path: "transection",
-        element: <Transection />,
-      },
+      { path: "transection", element: <Transactions /> },
       {
         path: "profile",
         element: <Profile />,

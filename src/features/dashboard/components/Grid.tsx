@@ -1,7 +1,7 @@
 import React from "react";
 import { Stats } from "./Stats";
-import { ActivityGraph } from "./ActivityGraph";
-import { UsageRadar } from "./UsageRadar";
+import { ActivityGraph } from "./charts/ActivityGraph";
+import { UsageRadar } from "./charts/UsageRadar";
 
 const Grid = () => {
   return (
@@ -20,3 +20,5 @@ const Grid = () => {
 };
 
 export default Grid;
+
+
