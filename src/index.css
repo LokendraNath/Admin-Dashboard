@@ -1,10 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:wght@400;700&family=Revalia&display=swap");
+
 @import "tailwindcss";
 
 @theme {
   --font-josefin: "Josefin Sans", sans-serif;
+  --font-Poppins: "Poppins", sans-serif;
 }
-* {
-  box-sizing: border-box;
-  font-family: ;
+
+.font-revalia {
+  font-family: "Revalia", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
