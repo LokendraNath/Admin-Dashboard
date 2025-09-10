@@ -7,9 +7,9 @@ const Header = () => {
   const { expanded, setExpanded } = useContext(SidebarContext);
 
   return (
-    <div className="w-full h-15 flex bg-white mb-2 shadow-xl px-10 items-center justify-between">
+    <div className="sticky top-0 w-full h-15 lg:h-17 flex bg-white shadow-lg px-10 items-center justify-between">
       <ChevronDoubleRightIcon
-        className="cursor-pointer"
+        className="cursor-pointer lg:hidden"
         width={30}
         onClick={() => setExpanded(!expanded)}
       />
