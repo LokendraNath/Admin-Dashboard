@@ -19,14 +19,13 @@ export const Orders = () => {
         </div>
       </div>
 
-      <div className="p-6">
-        <table className="w-full table-auto">
+      <div className="p-6 overflow-x-auto">
+        <table className="w-full table-auto ">
           <TableHead />
           <tbody>
             <TableRow
               orderId="#O1001"
               customer="John Doe"
-              date="Sep 9th"
               amount="$120.50"
               status="Completed"
               order={1}
@@ -34,7 +33,6 @@ export const Orders = () => {
             <TableRow
               orderId="#O1002"
               customer="Sarah Lee"
-              date="Sep 9th"
               amount="$75.20"
               status="Pending"
               order={2}
@@ -42,7 +40,6 @@ export const Orders = () => {
             <TableRow
               orderId="#O1003"
               customer="David Kim"
-              date="Sep 8th"
               amount="$40.00"
               status="Cancelled"
               order={3}
@@ -50,7 +47,6 @@ export const Orders = () => {
             <TableRow
               orderId="#O1004"
               customer="Alice Brown"
-              date="Sep 8th"
               amount="$210.00"
               status="Completed"
               order={4}
@@ -58,7 +54,6 @@ export const Orders = () => {
             <TableRow
               orderId="#O1005"
               customer="Michael Chen"
-              date="Sep 7th"
               amount="$99.99"
               status="Shipped"
               order={5}
@@ -76,7 +71,6 @@ const TableHead = () => {
       <tr className="text-sm font-semibold text-stone-600 border-b border-stone-200">
         <th className="text-start p-3">Order ID</th>
         <th className="text-start p-3">Customer</th>
-        <th className="text-start p-3">Date</th>
         <th className="text-start p-3">Amount</th>
         <th className="text-start p-3">Status</th>
         <th className="w-12"></th>
@@ -88,14 +82,12 @@ const TableHead = () => {
 const TableRow = ({
   orderId,
   customer,
-  date,
   amount,
   status,
   order,
 }: {
   orderId: string;
   customer: string;
-  date: string;
   amount: string;
   status: string;
   order: number;
@@ -124,7 +116,6 @@ const TableRow = ({
         </a>
       </td>
       <td className="p-3 text-stone-700">{customer}</td>
-      <td className="p-3 text-stone-600">{date}</td>
       <td className="p-3 font-semibold text-stone-800">{amount}</td>
       <td className={`p-3 font-semibold ${statusColor}`}>{status}</td>
       <td className="w-12">

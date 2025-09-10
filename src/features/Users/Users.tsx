@@ -26,7 +26,6 @@ export const Users = () => {
             <TableRow
               userId="#U1001"
               name="John Doe"
-              email="john@example.com"
               role="Admin"
               status="Active"
               order={1}
@@ -34,7 +33,6 @@ export const Users = () => {
             <TableRow
               userId="#U1002"
               name="Sarah Lee"
-              email="sarah@example.com"
               role="Manager"
               status="Inactive"
               order={2}
@@ -42,7 +40,6 @@ export const Users = () => {
             <TableRow
               userId="#U1003"
               name="David Kim"
-              email="david@example.com"
               role="Staff"
               status="Active"
               order={3}
@@ -50,7 +47,6 @@ export const Users = () => {
             <TableRow
               userId="#U1004"
               name="Alice Brown"
-              email="alice@example.com"
               role="Admin"
               status="Active"
               order={4}
@@ -58,7 +54,6 @@ export const Users = () => {
             <TableRow
               userId="#U1005"
               name="Michael Chen"
-              email="michael@example.com"
               role="Staff"
               status="Inactive"
               order={5}
@@ -76,7 +71,6 @@ const TableHead = () => {
       <tr className="text-sm font-semibold text-stone-600 border-b border-stone-200">
         <th className="text-start p-3">User ID</th>
         <th className="text-start p-3">Name</th>
-        <th className="text-start p-3">Email</th>
         <th className="text-start p-3">Role</th>
         <th className="text-start p-3">Status</th>
         <th className="w-12"></th>
@@ -88,14 +82,12 @@ const TableHead = () => {
 const TableRow = ({
   userId,
   name,
-  email,
   role,
   status,
   order,
 }: {
   userId: string;
   name: string;
-  email: string;
   role: string;
   status: string;
   order: number;
@@ -117,7 +109,6 @@ const TableRow = ({
         </a>
       </td>
       <td className="p-3 text-stone-700">{name}</td>
-      <td className="p-3 text-stone-600">{email}</td>
       <td className="p-3 font-semibold text-stone-800">{role}</td>
       <td className={`p-3 font-semibold ${statusColor}`}>{status}</td>
       <td className="w-12">

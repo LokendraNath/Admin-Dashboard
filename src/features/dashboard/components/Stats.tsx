@@ -6,16 +6,16 @@ import React from "react";
 
 export const Stats = () => {
   return (
-    <div className="grid grid-cols-12 gap-2 md:gap-4">
+    <div className="grid grid-cols-12 gap-1 md:gap-4">
       <Cards
         title="Gross Revenue"
-        value="120,054,24"
+        value="1,200,89"
         pillText="2.754"
         treand="up"
         period="From Jan 1st - Jul 31st"
       />
       <Cards
-        title="Average Order"
+        title="Avg Order"
         value="27.97"
         pillText="1.02"
         treand="down"
@@ -23,7 +23,7 @@ export const Stats = () => {
       />
       <Cards
         title="Trailing Year"
-        value="254,545.34"
+        value="254,545"
         pillText="45.434"
         treand="up"
         period="From Jan 1st - Jul 31st"
@@ -48,20 +48,20 @@ const Cards = ({ title, value, pillText, treand, period }: CardProps) => {
           <h3 className="text-[12px] md:text-sm md:mb-2 text-stone-800">
             {title}
           </h3>
-          <p className="text-xl md:text-3xl font-semibold">
-            <span className="text-xl md:text-2xl mr-1">$</span>
+          <p className="text-lg md:text-3xl font-semibold">
+            <span className="text-lg md:text-2xl mr-1">$</span>
             {value}
           </p>
         </div>
         <span
-          className={`flex gap-2 md:border md:px-2 rounded-lg py-0.5 ${
+          className={`flex gap-1 md:border md:px-2 rounded-lg py-0.5 ${
             treand === "up"
               ? "md:bg-green-200 text-green-800"
               : "md:bg-red-100 text-red-800"
           }`}
         >
           {treand === "up" ? (
-            <ArrowTrendingUpIcon className="w-4" />
+            <ArrowTrendingUpIcon className="w-[12px] lg:w-4" />
           ) : (
             <ArrowTrendingDownIcon className="w-4" />
           )}
