@@ -1,6 +1,10 @@
 import { useContext } from "react";
 import { SidebarContext } from "../Layout/Layout";
-import { ChevronDoubleRightIcon } from "@heroicons/react/16/solid";
+import {
+  ChevronDoubleRightIcon,
+  MoonIcon,
+  SunIcon,
+} from "@heroicons/react/16/solid";
 import profileImage from "@assets/pfp-lokendra2.png";
 
 const Header = () => {
@@ -14,11 +18,10 @@ const Header = () => {
         onClick={() => setExpanded(!expanded)}
       />
       <h1 className="text-2xl font-revalia">CapitalEdge</h1>
-      <img
-        src={profileImage}
-        className="h-10 w-10 object-cover rounded-full"
-        alt=""
-      />
+      <button className=" py-2 rounded-full px-2 bg-black">
+        <MoonIcon width={20} className="text-white" />
+      </button>
+      <SunIcon width={20} />
     </div>
   );
 };
