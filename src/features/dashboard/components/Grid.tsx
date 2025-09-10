@@ -9,10 +9,10 @@ const Grid = () => {
       <div className="col-span-12">
         <Stats />
       </div>
-      <div className="col-span-8">
+      <div className="col-span-12 md:col-span-8">
         <ActivityGraph />
       </div>
-      <div className="col-span-4">
+      <div className="hidden md:block col-span-4">
         <UsageRadar />
       </div>
     </div>
@@ -20,5 +20,3 @@ const Grid = () => {
 };
 
 export default Grid;
-
-
