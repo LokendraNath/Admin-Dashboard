@@ -92,11 +92,8 @@ export function SidebareIcon({ icon, text, active }: SidebareIconProps) {
 
   return (
     <li
-      className={`relative flex items-center my-2 font-medium cursor-pointer font-Poppins
-  rounded-xl overflow-hidden
-  transition-[padding,background-color,color,box-shadow] duration-300 ease-in-out
-  ${expanded ? "justify-start px-3 py-2" : "justify-center p-2 px-3"}
-  ${
+      className={`flex items-center font-medium cursor-pointer font-Poppins
+  rounded-xl py-3 px-5 ${
     active
       ? "bg-white text-stone-950 shadow-lg"
       : "text-stone-500 hover:bg-stone-200 shadow-none"
@@ -106,7 +103,7 @@ export function SidebareIcon({ icon, text, active }: SidebareIconProps) {
       <span
         className={`ml-3 whitespace-nowrap overflow-hidden
     transition-[max-width,opacity] duration-300 ease-in-out
-    ${expanded ? "opacity-100 max-w-40" : "opacity-0 max-w-0"}`}
+    opacity-100 max-w-40"`}
       >
         {text}
       </span>
