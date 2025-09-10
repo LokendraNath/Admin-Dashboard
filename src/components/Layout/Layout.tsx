@@ -1,19 +1,8 @@
 import React, { createContext, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar, { SidebareIcon } from "../Sidebar/Sidebar";
-import {
-  BanknotesIcon,
-  BuildingStorefrontIcon,
-  ChartBarIcon,
-  ChartBarSquareIcon,
-  Cog6ToothIcon,
-  CubeTransparentIcon,
-  InboxStackIcon,
-  PresentationChartLineIcon,
-  QuestionMarkCircleIcon,
-  ShoppingCartIcon,
-  UserCircleIcon,
-} from "@heroicons/react/16/solid";
+import SidebarM from "../Sidebar/SidebarM";
+import Header from "../Header/Header";
 
 interface SidebarContextType {
   expanded: boolean;
@@ -21,7 +10,7 @@ interface SidebarContextType {
 }
 
 export const SidebarContext = createContext<SidebarContextType>({
-  expanded: true,
+  expanded: false,
   setExpanded: () => {},
 });
 
@@ -29,56 +18,32 @@ const Layout = () => {
   const [expanded, setExpanded] = useState<boolean>(true);
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <main
-        className={`min-h-full gap-4 grid font-josefin ${
-          expanded ? "grid-cols-[auto_1fr]" : "grid-cols-[auto_1fr]"
-        }`}
-      >
-        <SidebarContext.Provider value={{ expanded, setExpanded }}>
-          <Sidebar>
-            <SidebareIcon
-              icon={<PresentationChartLineIcon width={25} />}
-              text="Dashboard"
-              active={true}
-            />
-            <SidebareIcon
-              icon={<BanknotesIcon width={25} />}
-              text="Billing"
-              active={false}
-            />
-            <SidebareIcon
-              icon={<InboxStackIcon width={25} />}
-              text="Inventory"
-              active={false}
-            />
-            <SidebareIcon
-              icon={<BuildingStorefrontIcon width={25} />}
-              text="Orders"
-              active={false}
-            />
-            <SidebareIcon
-              icon={<UserCircleIcon width={25} />}
-              text="Users"
-              active={false}
-            />
-            <SidebareIcon
-              icon={<Cog6ToothIcon width={25} />}
-              text="Setting"
-              active={false}
-            />
-            <SidebareIcon
-              icon={<QuestionMarkCircleIcon width={25} />}
-              text="Help"
-              active={false}
-            />
-          </Sidebar>
-        </SidebarContext.Provider>
-        <div className="overflow-auto">
-          <Outlet />
-        </div>
-      </main>
-    </div>
+    <SidebarContext.Provider value={{ expanded, setExpanded }}>
+      {/* =========Desktop Grid=============== */}
+      <div className="hidden lg:grid grid-cols-[250px_1fr] min-h-screen bg-gray-100">
+        {/* Sidebar */}
+        <Sidebar />
+        <main className="min-h-full gap-2 lg:gap-4 grid font-josefin">
+          <div className="overflow-auto">
+            <Outlet />
+          </div>
+        </main>
+      </div>
+
+      {/* ========= Mobile =============== */}
+      <div className="lg:hidden min-h-screen bg-gray-100">
+        {/* For Desktop */}
+        <Header />
+        <SidebarM />
+        <main className="min-h-full gap-2 lg:gap-4 grid font-josefin">
+          <div className="overflow-auto">
+            <Outlet />
+          </div>
+        </main>
+        {/* For Mobile */}
+        <SidebarM />
+      </div>
+    </SidebarContext.Provider>
   );
 };
 

@@ -24,19 +24,27 @@ import {
 import profileImage from "@assets/pfp-lokendra2.png";
 import { NavLink } from "react-router-dom";
 import { SidebarContext } from "../Layout/Layout";
+import { motion } from "motion/react";
 
 interface SidebarProps {
   children?: ReactNode;
 }
+const SidebarVariants = {
+  hidden: { x: "-100%" },
+  visible: { x: 0 },
+  exit: { x: "-100%" },
+};
 
-const Sidebar = ({ children }: SidebarProps) => {
+const SidebarM = ({ children }: SidebarProps) => {
   const { expanded, setExpanded } = useContext(SidebarContext);
 
   return (
-    <aside
-      className={`h-screen flex-none overflow-hidden box-border
-  transition-[width] duration-300 ease-in-out
-  ${expanded ? "w-[50px]" : "w-[72px]"}`}
+    <motion.aside
+      className={`fixed top-0 left-0 flex-none overflow-hidden box-border w-64 h-full bg-white`}
+      variants={SidebarVariants}
+      initial="hidden"
+      animate={expanded ? "visible" : "hidden"}
+      exit="exit"
     >
       <nav className="h-screen flex flex-col justify-between p-2">
         {/* //! Logo */}
@@ -51,20 +59,16 @@ const Sidebar = ({ children }: SidebarProps) => {
       ${expanded ? "opacity-100 max-w-full" : "opacity-0 max-w-0"}
     `}
           >
-            <h1 className="font-revalia text-[22px] font-bold whitespace-nowrap">
+            <h1 className="font-revalia text-[20px] font-bold whitespace-nowrap">
               CapitalEdge
             </h1>
           </NavLink>
 
           <button
             onClick={() => setExpanded((cur) => !cur)}
-            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-200"
+            className="p-1.5 rounded-lg bg-gray-50"
           >
-            {expanded ? (
-              <ChevronDoubleLeftIcon className="cursor-pointer" width={30} />
-            ) : (
-              <ChevronDoubleRightIcon className="cursor-pointer" width={30} />
-            )}
+            <ChevronDoubleLeftIcon className="cursor-pointer" width={30} />
           </button>
         </div>
 
@@ -144,7 +148,7 @@ const Sidebar = ({ children }: SidebarProps) => {
           <EllipsisVerticalIcon width={20} className="cursor-pointer" />
         </div>
       </nav>
-    </aside>
+    </motion.aside>
   );
 };
 
@@ -182,4 +186,4 @@ export function SidebareIcon({ icon, text, active }: SidebareIconProps) {
   );
 }
 
-export default Sidebar;
+export default SidebarM;
