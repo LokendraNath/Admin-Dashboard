@@ -15,19 +15,22 @@ export const SidebarContext = createContext<SidebarContextType>({
 });
 
 const Layout = () => {
-  const [expanded, setExpanded] = useState<boolean>(true);
+  const [expanded, setExpanded] = useState<boolean>(false);
 
   return (
     <SidebarContext.Provider value={{ expanded, setExpanded }}>
       {/* =========Desktop Grid=============== */}
-      <div className="hidden lg:grid grid-cols-[250px_1fr] min-h-screen bg-gray-100">
-        {/* Sidebar */}
-        <Sidebar />
-        <main className="min-h-full gap-2 lg:gap-4 grid font-josefin">
-          <div className="overflow-auto">
-            <Outlet />
-          </div>
-        </main>
+      <div className="hidden lg:flex flex-col">
+        <Header />
+        <div className="h-screen bg-gray-100 overflow-hidden">
+          {/* Sidebar */}
+          <Sidebar />
+          <main className=" ml-57 mt-2 overflow-y-auto gap-2 lg:gap-4 grid font-josefin">
+            <div className="overflow-auto">
+              <Outlet />
+            </div>
+          </main>
+        </div>
       </div>
 
       {/* ========= Mobile =============== */}
