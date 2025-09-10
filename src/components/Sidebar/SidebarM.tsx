@@ -71,52 +71,62 @@ const SidebarM = ({ children }: SidebarProps) => {
             <ChevronDoubleLeftIcon className="cursor-pointer" width={30} />
           </button>
         </div>
-
-        {/* //! RouteSelect */}
-        {/* <div className="space-y-5 px-4 mt-5 flex-1">
-          <Route icon="ChartBarSquare" iconName="Dashboard" to="" />
-          <Route icon="Banknotes" iconName="Transection" to="transection" />
-          <Route icon="UserIcon" iconName="Profile" to="profile" />
-        </div> */}
-
-        {/* Render custom sidebar items passed from parent */}
         <ul
           className={`mt-5 flex-1 py-2 space-y-2 ${expanded ? "px-4" : "px-2"}`}
         >
+          <NavLink
+            to="/"
+            end
+            onClick={() => setExpanded(!expanded)}
+            className={({ isActive }) =>
+              `flex items-center font-medium font-Poppins rounded-xl transition-all duration-300 ease-in-out justify-start px-3 py-2
+               ${
+                 isActive
+                   ? "bg-blue-600 text-white shadow-md"
+                   : "text-stone-500 hover:bg-stone-200"
+               }`
+            }
+          >
+            <span className="shrink-0">
+              <PresentationChartLineIcon width={25} />
+            </span>
+            <span
+              className={`ml-3 whitespace-nowrap overflow-hidden transition-all duration-300
+               opacity-100 max-w-40`}
+            >
+              Dashboard
+            </span>
+          </NavLink>
+
           <SidebareIcon
-            icon={<PresentationChartLineIcon width={25} />}
-            text="Dashboard"
-            active={true}
-          />
-          <SidebareIcon
+            to="/transections"
             icon={<BanknotesIcon width={25} />}
-            text="Billing"
-            active={false}
+            text="Transections"
           />
           <SidebareIcon
+            to="/inventory"
             icon={<InboxStackIcon width={25} />}
             text="Inventory"
-            active={false}
           />
           <SidebareIcon
+            to="/orders"
             icon={<BuildingStorefrontIcon width={25} />}
             text="Orders"
-            active={false}
           />
           <SidebareIcon
+            to="/users"
             icon={<UserCircleIcon width={25} />}
             text="Users"
-            active={false}
           />
           <SidebareIcon
+            to="/settings"
             icon={<Cog6ToothIcon width={25} />}
-            text="Setting"
-            active={false}
+            text="Settings"
           />
           <SidebareIcon
+            to="/help"
             icon={<QuestionMarkCircleIcon width={25} />}
             text="Help"
-            active={false}
           />
         </ul>
 
@@ -153,36 +163,35 @@ const SidebarM = ({ children }: SidebarProps) => {
 };
 
 interface SidebareIconProps {
+  to: string;
   icon: ReactNode;
   text: string;
-  active?: boolean;
-  alert?: boolean;
 }
 
-export function SidebareIcon({ icon, text, active }: SidebareIconProps) {
-  const { expanded } = useContext(SidebarContext);
+function SidebareIcon({ to, icon, text }: SidebareIconProps) {
+  const { expanded, setExpanded } = useContext(SidebarContext);
 
   return (
-    <li
-      className={`relative flex items-center my-2 font-medium cursor-pointer font-Poppins
-  rounded-xl overflow-hidden
-  transition-[padding,background-color,color,box-shadow] duration-300 ease-in-out
-  ${expanded ? "justify-start px-3 py-2" : "justify-center p-2 px-3"}
-  ${
-    active
-      ? "bg-white text-stone-950 shadow-lg"
-      : "text-stone-500 hover:bg-stone-200 shadow-none"
-  }`}
+    <NavLink
+      to={to}
+      onClick={() => setExpanded(!expanded)}
+      className={({ isActive }) =>
+        `flex items-center font-medium font-Poppins rounded-xl transition-all duration-300 ease-in-out justify-start px-3 py-2
+        ${
+          isActive
+            ? "bg-blue-600 text-white shadow-md"
+            : "text-stone-500 hover:bg-stone-200"
+        }`
+      }
     >
       <span className="shrink-0">{icon}</span>
       <span
-        className={`ml-3 whitespace-nowrap overflow-hidden
-    transition-[max-width,opacity] duration-300 ease-in-out
-    ${expanded ? "opacity-100 max-w-40" : "opacity-0 max-w-0"}`}
+        className={`ml-3 whitespace-nowrap overflow-hidden transition-all duration-300
+        opacity-100 max-w-40`}
       >
         {text}
       </span>
-    </li>
+    </NavLink>
   );
 }
 
