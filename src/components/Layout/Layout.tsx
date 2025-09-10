@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import { Outlet } from "react-router-dom";
-import Sidebar, { SidebareIcon } from "../Sidebar/Sidebar";
+import Sidebar from "../Sidebar/Sidebar";
 import SidebarM from "../Sidebar/SidebarM";
 import Header from "../Header/Header";
 
