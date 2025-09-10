@@ -11,6 +11,11 @@ import {
 } from "react-router-dom";
 import Profile from "@features/profile/Profile";
 import { Transactions } from "@features/transactions/Transactions";
+import { Inventory } from "./features/Invantory/Invantory";
+import { Orders } from "./features/Orders/Orders";
+import { Users } from "./features/Users/Users";
+import { Settings } from "./features/Setting/Setting";
+import { Help } from "./features/Help/Help";
 
 const routes = createBrowserRouter([
   {
@@ -21,11 +26,12 @@ const routes = createBrowserRouter([
         index: true,
         element: <Dashboard />,
       },
-      { path: "transection", element: <Transactions /> },
-      {
-        path: "profile",
-        element: <Profile />,
-      },
+      { path: "transections", element: <Transactions /> },
+      { path: "inventory", element: <Inventory /> },
+      { path: "orders", element: <Orders /> },
+      { path: "users", element: <Users /> },
+      { path: "settings", element: <Settings /> },
+      { path: "help", element: <Help /> },
     ],
   },
 ]);
