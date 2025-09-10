@@ -6,7 +6,7 @@ import React from "react";
 
 export const Stats = () => {
   return (
-    <div className="grid grid-cols-12 gap-4">
+    <div className="grid grid-cols-12 gap-2 md:gap-4">
       <Cards
         title="Gross Revenue"
         value="120,054,24"
@@ -42,20 +42,22 @@ type CardProps = {
 
 const Cards = ({ title, value, pillText, treand, period }: CardProps) => {
   return (
-    <div className="p-4 col-span-4 rounded-lg border border-stone-300">
-      <div className="flex items-start justify-between mb-3">
+    <div className="p-2 md:p-4 col-span-4 rounded-lg border border-stone-300">
+      <div className="flex items-start justify-between md:mb-3">
         <div>
-          <h3 className="text-sm mb-2 text-stone-800">{title}</h3>
-          <p className="text-3xl font-semibold">
-            <span className="text-2xl mr-1">$</span>
+          <h3 className="text-[12px] md:text-sm md:mb-2 text-stone-800">
+            {title}
+          </h3>
+          <p className="text-xl md:text-3xl font-semibold">
+            <span className="text-xl md:text-2xl mr-1">$</span>
             {value}
           </p>
         </div>
         <span
-          className={`flex gap-2 border px-2 rounded-lg py-0.5 ${
+          className={`flex gap-2 md:border md:px-2 rounded-lg py-0.5 ${
             treand === "up"
-              ? "bg-green-200 text-green-800"
-              : "bg-red-100 text-red-800"
+              ? "md:bg-green-200 text-green-800"
+              : "md:bg-red-100 text-red-800"
           }`}
         >
           {treand === "up" ? (
@@ -63,10 +65,10 @@ const Cards = ({ title, value, pillText, treand, period }: CardProps) => {
           ) : (
             <ArrowTrendingDownIcon className="w-4" />
           )}
-          {pillText}%
+          <p className="hidden md:block">{pillText}%</p>
         </span>
       </div>
-      <p className="text-sm text-stone-500">{period}</p>
+      <p className="text-[10px] md:text-[14px] text-stone-500">{period}</p>
     </div>
   );
 };
