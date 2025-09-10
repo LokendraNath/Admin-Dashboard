@@ -7,26 +7,34 @@ import React from "react";
 export const Stats = () => {
   return (
     <div className="grid grid-cols-12 gap-1 md:gap-4">
+      {/* Gross Revenue */}
       <Cards
         title="Gross Revenue"
         value="1,200,89"
         pillText="2.754"
         treand="up"
         period="From Jan 1st - Jul 31st"
+        className="col-span-12 md:col-span-4"
       />
+
+      {/* Avg Order */}
       <Cards
         title="Avg Order"
         value="27.97"
         pillText="1.02"
         treand="down"
         period="From Jan 1st - Jul 31st"
+        className="col-span-6 md:col-span-4"
       />
+
+      {/* Third Card */}
       <Cards
-        title="Trailing Year"
-        value="254,545"
+        title="Orders"
+        value="3,452"
         pillText="45.434"
         treand="up"
         period="From Jan 1st - Jul 31st"
+        className="col-span-6 md:col-span-4"
       />
     </div>
   );
@@ -38,11 +46,21 @@ type CardProps = {
   pillText: string;
   treand: "up" | "down";
   period: string;
+  className?: string;
 };
 
-const Cards = ({ title, value, pillText, treand, period }: CardProps) => {
+const Cards = ({
+  title,
+  value,
+  pillText,
+  treand,
+  period,
+  className,
+}: CardProps) => {
   return (
-    <div className="p-2 md:p-4 col-span-4 rounded-lg border border-stone-300">
+    <div
+      className={`p-2 md:p-4 rounded-lg border border-stone-300 ${className}`}
+    >
       <div className="flex items-start justify-between md:mb-3">
         <div>
           <h3 className="text-[12px] md:text-sm md:mb-2 text-stone-800">

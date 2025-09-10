@@ -12,7 +12,7 @@ const Grid = () => {
       <div className="col-span-12 md:col-span-8">
         <ActivityGraph />
       </div>
-      <div className="hidden md:block col-span-4">
+      <div className="md:block col-span-12 md:col-span-4">
         <UsageRadar />
       </div>
     </div>
