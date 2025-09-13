@@ -3,6 +3,11 @@
 This is a **CapitalEdge Admin Page** built using **React + TailwindCSS + React Router + Recharts + Zustand**.  
 The purpose of this project is to **improve my frontend development skills** and practice building real-world admin dashboards.
 
+### For Login -
+
+- Email - lokendra@x.com
+- Pass - lokendra
+
 ---
 
 ## 📷 Preview
