@@ -2,6 +2,8 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-josefin: "Josefin Sans", sans-serif;
   --font-Poppins: "Poppins", sans-serif;

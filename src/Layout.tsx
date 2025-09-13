@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "./components/Sidebar/Sidebar";
 import SidebarM from "./components/Sidebar/SidebarM";
 import Header from "./components/Header";
-import { useAuthStore } from "./store/store";
+import { useAuthStore, useThemeStore } from "./store/store";
 import Login from "./components/Login";
 
 interface SidebarContextType {
@@ -20,6 +20,14 @@ const Layout = () => {
   const { isAuthenticated, initilizeAuth } = useAuthStore();
   const [expanded, setExpanded] = useState<boolean>(false);
 
+  const { theme } = useThemeStore();
+
+  useEffect(() => {
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
   useEffect(() => {
     initilizeAuth();
   }, [initilizeAuth]);
@@ -33,11 +41,11 @@ const Layout = () => {
       {/* =========Desktop Grid=============== */}
       <div className="hidden lg:flex flex-col">
         <Header />
-        <div className="h-screen bg-gray-100 overflow-hidden">
+        <div className="h-screen bg-gray-100 overflow-hidden dark:bg-[#292D32]">
           {/* Sidebar */}
           <Sidebar />
           <main className=" ml-57 mt-2 overflow-y-auto gap-2 lg:gap-4 grid font-josefin">
-            <div className="overflow-auto">
+            <div className="overflow-auto  rounded-xl bg-white dark:bg-[#1D202B] text-black dark:text-white">
               <Outlet />
             </div>
           </main>
