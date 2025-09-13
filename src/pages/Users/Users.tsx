@@ -2,18 +2,18 @@ import {
   ArrowUpRightIcon,
   UserCircleIcon,
   EllipsisHorizontalIcon,
-} from "@heroicons/react/16/solid";
+} from "@heroicons/react/24/solid";
 
 export const Users = () => {
   return (
-    <div className="bg-white rounded-lg shadow-2xl min-h-full">
-      <div className="p-6 border-b border-stone-200">
+    <div className="bg-white dark:bg-[#1D202B] rounded-lg shadow-2xl min-h-full">
+      <div className="p-6 border-b border-stone-200 dark:border-stone-700">
         <div className="flex justify-between items-center">
-          <h3 className="flex text-xl font-semibold items-center space-x-3 text-stone-800">
-            <UserCircleIcon className="w-6 text-stone-600" />
+          <h3 className="flex text-xl font-semibold items-center space-x-3 text-stone-800 dark:text-stone-200">
+            <UserCircleIcon className="w-6 text-stone-600 dark:text-stone-200" />
             <span>Users</span>
           </h3>
-          <button className="bg-stone-100 hover:bg-stone-200 px-4 py-2 rounded-lg text-stone-700 font-medium transition-colors">
+          <button className="bg-stone-100 dark:bg-[#2A2F3D] hover:bg-stone-200 dark:hover:bg-[#343A46] px-4 py-2 rounded-lg text-stone-700 dark:text-stone-200 font-medium transition-colors">
             Manage
           </button>
         </div>
@@ -68,7 +68,7 @@ export const Users = () => {
 const TableHead = () => {
   return (
     <thead>
-      <tr className="text-sm font-semibold text-stone-600 border-b border-stone-200">
+      <tr className="text-sm font-semibold text-stone-600 dark:text-stone-300 border-b border-stone-200 dark:border-stone-700">
         <th className="text-start p-3">User ID</th>
         <th className="text-start p-3">Name</th>
         <th className="text-start p-3">Role</th>
@@ -92,27 +92,34 @@ const TableRow = ({
   status: string;
   order: number;
 }) => {
-  const statusColor = status === "Active" ? "text-green-600" : "text-red-600";
+  const statusColor =
+    status === "Active"
+      ? "text-green-600 dark:text-green-400"
+      : "text-red-600 dark:text-red-400";
 
   return (
     <tr
-      className={`text-sm hover:bg-stone-50 transition-colors ${
-        order % 2 ? "bg-stone-50" : "bg-white"
-      }`}
+      className={`text-sm transition-colors ${
+        order % 2
+          ? "bg-stone-50 dark:bg-[#232530]"
+          : "bg-white dark:bg-[#1D202B]"
+      } hover:bg-stone-50 dark:hover:bg-[#2A2F3D]`}
     >
       <td className="p-3">
         <a
           href="#"
-          className="text-blue-600 hover:text-blue-800 underline flex items-center gap-1 font-medium"
+          className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline flex items-center gap-1 font-medium"
         >
           {userId} <ArrowUpRightIcon className="w-4" />
         </a>
       </td>
-      <td className="p-3 text-stone-700">{name}</td>
-      <td className="p-3 font-semibold text-stone-800">{role}</td>
+      <td className="p-3 text-stone-700 dark:text-stone-300">{name}</td>
+      <td className="p-3 font-semibold text-stone-800 dark:text-stone-200">
+        {role}
+      </td>
       <td className={`p-3 font-semibold ${statusColor}`}>{status}</td>
       <td className="w-12">
-        <button className="hover:bg-stone-200 transition-colors grid place-content-center rounded-lg text-stone-500 hover:text-stone-700 size-8">
+        <button className="transition-colors grid place-content-center rounded-lg text-stone-500 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-[#343A46] hover:text-stone-700 dark:hover:text-stone-200 size-8">
           <EllipsisHorizontalIcon className="w-5" />
         </button>
       </td>

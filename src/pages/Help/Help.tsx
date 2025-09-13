@@ -1,11 +1,11 @@
-import { QuestionMarkCircleIcon } from "@heroicons/react/16/solid";
+import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 
 export const Help = () => {
   return (
-    <div className="bg-white rounded-lg shadow-2xl min-h-full">
-      <div className="p-6 border-b border-stone-200">
-        <h3 className="flex text-xl font-semibold items-center space-x-3 text-stone-800">
-          <QuestionMarkCircleIcon className="w-6 text-stone-600" />
+    <div className="bg-white dark:bg-[#1D202B] rounded-lg shadow-2xl min-h-full">
+      <div className="p-6 border-b border-stone-200 dark:border-stone-700">
+        <h3 className="flex text-xl font-semibold items-center space-x-3 text-stone-800 dark:text-stone-200">
+          <QuestionMarkCircleIcon className="w-6 text-stone-600 dark:text-stone-200" />
           <span>Help & FAQs</span>
         </h3>
       </div>
@@ -44,9 +44,13 @@ const FaqItem = ({
   answer: string;
 }) => {
   return (
-    <div className="border border-stone-200 rounded-lg p-4 hover:bg-stone-50 transition-colors">
-      <h4 className="font-semibold text-stone-800">{question}</h4>
-      <p className="text-stone-600 text-sm mt-1">{answer}</p>
+    <div className="border border-stone-200 dark:border-stone-700 rounded-lg p-4 hover:bg-stone-50 dark:hover:bg-[#292D32] transition-colors">
+      <h4 className="font-semibold text-stone-800 dark:text-stone-200">
+        {question}
+      </h4>
+      <p className="text-stone-600 dark:text-stone-300 text-sm mt-1">
+        {answer}
+      </p>
     </div>
   );
 };
