@@ -6,7 +6,7 @@ import React from "react";
 
 export const Stats = () => {
   return (
-    <div className="grid grid-cols-12 gap-1 md:gap-4">
+    <div className="grid grid-cols-12 gap-y-4 gap-x-3 md:gap-4">
       {/* Gross Revenue */}
       <Cards
         title="Gross Revenue"
@@ -59,14 +59,14 @@ const Cards = ({
 }: CardProps) => {
   return (
     <div
-      className={`p-2 md:p-4 rounded-lg border border-stone-300 ${className}`}
+      className={`p-2 md:p-4 rounded-lg border border-stone-300 dark:bg-[#292D32] ${className}`}
     >
       <div className="flex items-start justify-between md:mb-3">
         <div>
-          <h3 className="text-[12px] md:text-sm md:mb-2 text-stone-800">
+          <h3 className="text-[12px] md:text-sm md:mb-2 text-stone-800 dark:text-stone-200">
             {title}
           </h3>
-          <p className="text-lg md:text-3xl font-semibold">
+          <p className="text-3xl font-semibold">
             <span className="text-lg md:text-2xl mr-1">$</span>
             {value}
           </p>
@@ -86,7 +86,6 @@ const Cards = ({
           <p className="hidden md:block">{pillText}%</p>
         </span>
       </div>
-      <p className="text-[10px] md:text-[14px] text-stone-500">{period}</p>
     </div>
   );
 };

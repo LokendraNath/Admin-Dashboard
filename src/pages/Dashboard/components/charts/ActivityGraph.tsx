@@ -37,12 +37,12 @@ export const ActivityGraph = () => {
             data={data}
             margin={{ top: 0, right: 0, left: -24, bottom: 0 }}
           >
-            <CartesianGrid stroke="#e4e4e7" />
+            {/* <CartesianGrid stroke="#e4" /> */}
             <XAxis
               dataKey="name"
               axisLine={false}
               tickLine={false}
-              className="text-xs font-bold"
+              className="text-xs font-bold dark:text-stone-200"
               padding={{ right: 4 }}
             />
             <YAxis
