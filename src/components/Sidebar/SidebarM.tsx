@@ -1,6 +1,7 @@
 import { useState, type ReactNode, createContext, useContext } from "react";
 import Route from "./RouteSelect";
 import {
+  ArrowLeftStartOnRectangleIcon,
   BanknotesIcon,
   BuildingStorefrontIcon,
   ChartBarIcon,
@@ -21,10 +22,12 @@ import {
   EllipsisVerticalIcon,
   ForwardIcon,
 } from "@heroicons/react/16/solid";
-import profileImage from "@assets/pfp-lokendra2.png";
+import profileImage from "/assets/pfp-lokendra2.png";
 import { NavLink } from "react-router-dom";
 import { SidebarContext } from "../../Layout";
 import { motion } from "motion/react";
+import { useAuthStore } from "../../store/store";
+import { fakeLogout } from "@/utils/auth";
 
 interface SidebarProps {
   children?: ReactNode;
@@ -128,6 +131,23 @@ const SidebarM = ({ children }: SidebarProps) => {
             icon={<QuestionMarkCircleIcon width={25} />}
             text="Help"
           />
+          <button
+            onClick={() => {
+              fakeLogout();
+              setExpanded(!expanded);
+            }}
+            className="flex items-center font-medium font-Poppins rounded-xl transition-all duration-300 ease-in-out justify-start px-3 py-2 text-red-600 cursor-pointer"
+          >
+            <span className="shrink-0">
+              <ArrowLeftStartOnRectangleIcon width={20} />
+            </span>
+            <span
+              className={`ml-3 whitespace-nowrap overflow-hidden transition-all duration-300
+               opacity-100 max-w-40`}
+            >
+              Logout
+            </span>
+          </button>
         </ul>
 
         {/* //! AccountToggle */}

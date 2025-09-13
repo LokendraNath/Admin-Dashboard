@@ -1,8 +1,10 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./components/Sidebar/Sidebar";
 import SidebarM from "./components/Sidebar/SidebarM";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
+import { useAuthStore } from "./store/store";
+import Login from "./components/Login";
 
 interface SidebarContextType {
   expanded: boolean;
@@ -15,7 +17,16 @@ export const SidebarContext = createContext<SidebarContextType>({
 });
 
 const Layout = () => {
+  const { isAuthenticated, initilizeAuth } = useAuthStore();
   const [expanded, setExpanded] = useState<boolean>(false);
+
+  useEffect(() => {
+    initilizeAuth();
+  }, [initilizeAuth]);
+
+  if (!isAuthenticated) {
+    return <Login />;
+  }
 
   return (
     <SidebarContext.Provider value={{ expanded, setExpanded }}>

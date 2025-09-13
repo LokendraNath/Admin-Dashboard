@@ -13,7 +13,8 @@ interface authState {
   logout: () => Promise<void>;
   initilizeAuth: () => void;
 }
-export const useAuthStor = create<authState>((set) => ({
+
+export const useAuthStore = create<authState>((set) => ({
   user: { id: null, name: null, email: null },
   isAuthenticated: false,
   logIn: async (email: string, password: string) => {

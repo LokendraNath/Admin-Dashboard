@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { SidebarContext } from "../../Layout";
+import { SidebarContext } from "../Layout";
 import { ChevronDoubleRightIcon } from "@heroicons/react/16/solid";
-import profileImage from "@assets/pfp-lokendra2.png";
+import profileImage from "/assets/pfp-lokendra2.png";
 
 const Header = () => {
   const { expanded, setExpanded } = useContext(SidebarContext);
