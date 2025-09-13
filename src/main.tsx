@@ -1,21 +1,21 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import Layout from "@components/Layout/Layout";
-import Dashboard from "@features/dashboard/Dashboard";
+import Layout from "@/Layout";
+import Dashboard from "@/pages/Dashboard/Dashboard";
 
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import Profile from "@features/profile/Profile";
-import { Transactions } from "@features/transactions/Transactions";
-import { Inventory } from "./features/Invantory/Invantory";
-import { Orders } from "./features/Orders/Orders";
-import { Users } from "./features/Users/Users";
-import { Settings } from "./features/Setting/Setting";
-import { Help } from "./features/Help/Help";
+import Profile from "@/pages/profile/Profile";
+import { Transactions } from "@/pages/transactions/Transactions";
+import { Inventory } from "./pages/Invantory/Invantory";
+import { Orders } from "./pages/Orders/Orders";
+import { Users } from "./pages/Users/Users";
+import { Settings } from "./pages/Setting/Setting";
+import { Help } from "./pages/Help/Help";
 
 const routes = createBrowserRouter([
   {

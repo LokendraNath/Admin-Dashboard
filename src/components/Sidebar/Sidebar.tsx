@@ -9,7 +9,7 @@ import {
   UserCircleIcon,
 } from "@heroicons/react/16/solid";
 import { NavLink } from "react-router-dom";
-import { SidebarContext } from "../Layout/Layout";
+import { SidebarContext } from "../../Layout";
 
 interface SidebarProps {
   children?: ReactNode;

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SidebarContext } from "../Layout/Layout";
+import { SidebarContext } from "../../Layout";
 import { ChevronDoubleRightIcon } from "@heroicons/react/16/solid";
 import profileImage from "@assets/pfp-lokendra2.png";
 

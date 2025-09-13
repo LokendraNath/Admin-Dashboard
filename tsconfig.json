@@ -19,7 +19,7 @@
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
-      "@features/*": ["src/features/*"],
+      "@features/*": ["src/pages/*"],
       "@assets/*": ["src/assets/*"],
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"]

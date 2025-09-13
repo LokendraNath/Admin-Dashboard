@@ -1,8 +1,8 @@
 import React, { createContext, useState } from "react";
 import { Outlet } from "react-router-dom";
-import Sidebar from "../Sidebar/Sidebar";
-import SidebarM from "../Sidebar/SidebarM";
-import Header from "../Header/Header";
+import Sidebar from "./components/Sidebar/Sidebar";
+import SidebarM from "./components/Sidebar/SidebarM";
+import Header from "./components/Header/Header";
 
 interface SidebarContextType {
   expanded: boolean;
