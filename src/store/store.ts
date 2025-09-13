@@ -13,6 +13,11 @@ interface authState {
   logout: () => Promise<void>;
   initilizeAuth: () => void;
 }
+type Theme = "light" | "dark";
+interface ThemeState {
+  theme: Theme;
+  toggleTheme: (theme: Theme) => void;
+}
 
 export const useAuthStore = create<authState>((set) => ({
   user: { id: null, name: null, email: null },
@@ -40,4 +45,10 @@ export const useAuthStore = create<authState>((set) => ({
       });
     }
   },
+}));
+
+export const useThemeStore = create<ThemeState>((set) => ({
+  theme: "light",
+  toggleTheme: () =>
+    set((state) => ({ theme: state.theme === "light" ? "dark" : "light" })),
 }));
