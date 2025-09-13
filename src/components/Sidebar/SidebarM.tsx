@@ -27,7 +27,6 @@ import { NavLink } from "react-router-dom";
 import { SidebarContext } from "../../Layout";
 import { motion } from "motion/react";
 import { useAuthStore } from "../../store/store";
-import { fakeLogout } from "@/utils/auth";
 
 interface SidebarProps {
   children?: ReactNode;
@@ -40,10 +39,11 @@ const SidebarVariants = {
 
 const SidebarM = ({ children }: SidebarProps) => {
   const { expanded, setExpanded } = useContext(SidebarContext);
+  const logout = useAuthStore((state) => state.logout);
 
   return (
     <motion.aside
-      className={`fixed top-0 left-0 flex-none overflow-hidden box-border w-64 h-full bg-white`}
+      className={`fixed top-0 left-0 flex-none overflow-hidden z-50 box-border w-64 h-full bg-white`}
       variants={SidebarVariants}
       initial="hidden"
       animate={expanded ? "visible" : "hidden"}
@@ -133,7 +133,7 @@ const SidebarM = ({ children }: SidebarProps) => {
           />
           <button
             onClick={() => {
-              fakeLogout();
+              logout();
               setExpanded(!expanded);
             }}
             className="flex items-center font-medium font-Poppins rounded-xl transition-all duration-300 ease-in-out justify-start px-3 py-2 text-red-600 cursor-pointer"

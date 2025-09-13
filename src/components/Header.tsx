@@ -7,7 +7,7 @@ const Header = () => {
   const { expanded, setExpanded } = useContext(SidebarContext);
 
   return (
-    <div className="sticky top-0 w-full h-15 lg:h-17 flex bg-white shadow-lg px-10 items-center justify-between">
+    <div className="sticky top-0 w-full h-15 lg:h-17 flex overflow-hidden z-40 bg-white ow-lg px-10 items-center justify-between">
       <ChevronDoubleRightIcon
         className="cursor-pointer lg:hidden"
         width={30}
