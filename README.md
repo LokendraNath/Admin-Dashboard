@@ -1,6 +1,6 @@
-# 📊 Finance Admin Dashboard
+# 📊 CapitalEdge - Finance Admin Dashboard
 
-This is a **Finance Admin Page** built using **React + TailwindCSS + React Router + Recharts**.  
+This is a **CapitalEdge Admin Page** built using **React + TailwindCSS + React Router + Recharts + Zustand**.  
 The purpose of this project is to **improve my frontend development skills** and practice building real-world admin dashboards.
 
 ---
@@ -27,6 +27,7 @@ The purpose of this project is to **improve my frontend development skills** and
 - 🎨 **TailwindCSS** – Styling framework
 - 🛣️ **React Router v7** – Client-side routing
 - 📈 **Recharts** – Data visualization & graphs
+- 💾 **Zustand** - For State Managment
 
 ---
 
