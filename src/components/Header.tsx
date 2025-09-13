@@ -20,19 +20,13 @@ const Header = () => {
         onClick={() => setExpanded(!expanded)}
       />
       <h1 className="text-2xl font-revalia">CapitalEdge</h1>
-      {theme === "light" ? (
-        <MoonIcon
-          className="cursor-pointer"
-          onClick={() => toggleTheme}
-          width={25}
-        />
-      ) : (
-        <SunIcon
-          className="cursor-pointer"
-          onClick={() => toggleTheme}
-          width={25}
-        />
-      )}
+      <button onClick={toggleTheme}>
+        {theme === "light" ? (
+          <MoonIcon className="cursor-pointer" width={25} />
+        ) : (
+          <SunIcon className="cursor-pointer" width={25} />
+        )}
+      </button>
     </div>
   );
 };
