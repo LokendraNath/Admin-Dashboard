@@ -43,7 +43,7 @@ const SidebarM = ({ children }: SidebarProps) => {
 
   return (
     <motion.aside
-      className={`fixed top-0 left-0 flex-none overflow-hidden z-50 box-border w-64 h-full bg-white`}
+      className={`fixed top-0 left-0 flex-none overflow-hidden z-50 box-border w-64 h-full bg-white dark:bg-[#292D32] dark:text-white`}
       variants={SidebarVariants}
       initial="hidden"
       animate={expanded ? "visible" : "hidden"}
@@ -69,7 +69,7 @@ const SidebarM = ({ children }: SidebarProps) => {
 
           <button
             onClick={() => setExpanded((cur) => !cur)}
-            className="p-1.5 rounded-lg bg-gray-50"
+            className="p-1.5 rounded-lg"
           >
             <ChevronDoubleLeftIcon className="cursor-pointer" width={30} />
           </button>
@@ -151,11 +151,7 @@ const SidebarM = ({ children }: SidebarProps) => {
         </ul>
 
         {/* //! AccountToggle */}
-        <div
-          className={`border flex border-stone-300   space-x-3 ${
-            expanded ? "p-4" : "p-1"
-          }`}
-        >
+        <div className={`flex    space-x-3 ${expanded ? "p-4" : "p-1"}`}>
           <button className="flex w-full rounded-full p-1 space-x-2 cursor-pointer">
             <img
               className="w-10 h-10 rounded-full shrink-0 shadow"
