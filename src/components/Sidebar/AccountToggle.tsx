@@ -9,7 +9,7 @@ import {
 import profileImage from "@assets/pfp-lokendra2.png";
 export const AccountToggle = () => {
   return (
-    <div className="flex mt-4 border-stone-300 pb-2 p-4 space-x-3">
+    <div className="flex mt-4 pb-2 p-4 space-x-3">
       <button className="flex w-full rounded-full p-1 transition-colors  duration-200 cursor-pointer space-x-2 hover:bg-stone-100">
         <img
           className="w-10 h-10 rounded-full shrink-0 shadow"
